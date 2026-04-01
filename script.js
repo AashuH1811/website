@@ -273,7 +273,7 @@ function payUPI(app){
     }
 
     // ===== YOUR REAL UPI ID =====
-    let upiID = "yourupi@upi";   // 🔴 CHANGE THIS
+    let upiID = "9699258832@upi";   // 🔴 CHANGE THIS
     let name = "NGO Donation";
 
     let upiURL = `upi://pay?pa=${upiID}&pn=${name}&am=${amount}&cu=INR`;

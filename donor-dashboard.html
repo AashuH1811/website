@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+<button onclick="logout()" class="logout-btn">Logout</button>
+<div class="dashboard-container">
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+    <h2>Donor Dashboard</h2>
+
+
+    <div class="profile-card">
+        <div id="donorDetails"></div>
+    </div>
+<div class="profile-card">
+<div class="profile-card">
+    <h3 style="color:#2ecc71;">👤 Donor Profile</h3>
+
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Contact:</strong> <span id="contact"></span></p>
+</div>
+    <div id="donorDetails"></div>
+</div>
+   
+    <div class="donation-section">
+    <h3>Make a Donation (Only For Donate Cash) </h3>
+    <input type="number" id="amount" placeholder="Enter Amount">
+
+    <button onclick="openPaymentApps()">Pay Online</button>
+<button onclick="openQR()">Pay via QR Code</button>
+<button class="cash-btn" onclick="sendWhatsApp()">Donate Cash</button>
+<!-- RECEIPT BOX -->
+<div id="receiptBox" class="receipt-box" style="display:none;">
+    <h3>Donation Receipt 🧾</h3>
+    <div id="receiptContent"></div>
+</div>
+
+
+<!-- QR Code Section -->
+<div id="qrModal" class="payment-modal">
+
+    <div class="payment-box">
+
+        <div class="close-btn" onclick="closeQR()">✖</div>
+
+        <div class="payment-header">
+            Scan & Pay 📱
+        </div>
+
+        <div class="qr-box">
+            <img src="C:\Users\POOJA HARNE\Desktop\DTS\QRcode.jpeg" alt="QR Code">
+        </div>
+
+        <p style="text-align:center; margin-top:15px;">
+            Scan using any UPI app
+        </p>
+
+    </div>
+
+</div>
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="payment-modal">
+
+    <div class="payment-box">
+
+        <div class="close-btn" onclick="closePayment()">✖</div>
+
+        <div class="payment-header">
+            Choose Payment App
+        </div>
+
+        <div class="apps-container">
+
+            <div class="app-card" onclick="payUPI('gpay')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe1gfZ9Vui9AaOeKvZAW7XbdHChUVemaF9PQ&s">
+                <p>Google Pay</p>
+            </div>
+
+            <div class="app-card" onclick="payUPI('phonepe')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzkQQrqPOBk5iZbJNkgBJjB0f09yEAMSvmRw&s">
+                <p>PhonePe</p>
+            </div>
+
+            <div class="app-card" onclick="payUPI('paytm')">
+                <img src="https://play-lh.googleusercontent.com/WDGsMRuVENnZPEpV4DEaXw12qtMY3em85xpmZqcXzeh0iT_eXFtAU9VUj-Z7xNQQd5DMqrkKSs9D0qbI1rlt">
+                <p>Paytm</p>
+            </div>
+
+            <div class="app-card" onclick="payUPI('bhim')">
+                <img src="https://www.uxdt.nic.in/wp-content/uploads/2020/06/BHIM_Preview.png">
+                <p>BHIM UPI</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+   
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
